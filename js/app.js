@@ -50,6 +50,7 @@ const createListItems = () => {
     const anchor = document.createElement('a')
 
     anchor.setAttribute('href', `#${section.id}`)
+    anchor.setAttribute('id',`${section.id}_nav_link`)
     anchor.classList.add('menu__link')
     anchor.innerText = section.getAttribute('data-nav')
 
@@ -63,10 +64,15 @@ const createListItems = () => {
 // Add class 'active' to section when near top of viewport
 const addActiveState = () => {
   sections.forEach(section => {
-    checkBoundings(section) ?
+    const navLink = document.querySelector(`#${section.id}_nav_link`)
+    if (checkBoundings(section)) {
       section.classList.add('active-section')
-      :
+      navLink.classList.add('active')
+    }
+    else {
       section.classList.remove('active-section')
+      navLink.classList.remove('active')
+    }
   })
 }
 
