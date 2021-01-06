@@ -2,12 +2,13 @@
 
 ## Table of Contents
 
-* [Instructions](#instructions)
+* [Getting Started](#gettingStarted)
+* [Project Description](#ProjectDescription)
 
-## Instructions
+## Getting Started
 
-The starter project has some HTML and CSS styling to display a static version of the Landing Page project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
+Just open the index.html file in your browser
 
-To get started, open `js/app.js` and start building out the app's functionality
+## Project Description
 
-For specific, detailed instructions, look at the project instructions in the Udacity Classroom.
+A simple multi-section Landing Page that has a navigation menu which built dynamically based on the sections on the page, when a user clicks on a navigation link the page scroll to the appropriate section, also the section is currently viewed has transparent background to indicate that it's active

@@ -17,7 +17,9 @@
  * Define Global Variables
  * 
 */
+// unordered list inside the navbar
 const navUL = document.querySelector('#navbar__list')
+// all sections in the HTML document
 const sections = document.querySelectorAll('section')
 /**
  * End Global Variables
@@ -25,6 +27,8 @@ const sections = document.querySelectorAll('section')
  * 
 */
 
+/* a helper function to check if the section is at suitable
+ position in the view port to make it active */
 const checkBoundings = (element) => {
   return element.getBoundingClientRect().top <= window.innerHeight / 2
     && element.getBoundingClientRect().bottom >= window.innerHeight / 2 ?
@@ -37,13 +41,14 @@ const checkBoundings = (element) => {
  * 
 */
 // build the nav
-
+// a function that creates all navigation links and add it to the UL in tha navbar
 const createListItems = () => {
   const fragment = document.createDocumentFragment()
 
   sections.forEach(section => {
     const listItem = document.createElement('li')
     const anchor = document.createElement('a')
+
     anchor.setAttribute('href', `#${section.id}`)
     anchor.classList.add('menu__link')
     anchor.innerText = section.getAttribute('data-nav')
@@ -54,6 +59,7 @@ const createListItems = () => {
 
   navUL.appendChild(fragment)
 }
+
 // Add class 'active' to section when near top of viewport
 const addActiveState = () => {
   sections.forEach(section => {
